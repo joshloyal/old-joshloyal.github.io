@@ -5,10 +5,15 @@ BLOG_DIR=$(CURDIR)/_blog
 RESUME=$(CURDIR)/index.html
 RESUME_DIR=$(CURDIR)/_resume-template
 
-.PHONY: all blog resume serve clean
+.PHONY: all build blog resume serve clean
 
 
-serve: $(BLOG) $(RESUME)
+
+build: clean all
+
+all: $(BLOG) $(RESUME)
+
+serve: build
 	python $(CURDIR)/scripts/run_server.py
 
 blog: $(BLOG)
