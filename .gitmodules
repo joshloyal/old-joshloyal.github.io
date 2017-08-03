@@ -1,3 +1,6 @@
 [submodule "_blog"]
 	path = _blog
 	url = https://github.com/joshloyal/blog
+[submodule "_resume-template"]
+	path = _resume-template
+	url = git@github.com:joshloyal/resume-template.git
