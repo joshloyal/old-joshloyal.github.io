@@ -820,6 +820,11 @@ a.button:hover {
   font-weight: bold;
   padding-bottom: 0.3em; }
 
+.profile-picture {
+  height: 120px;
+  width: 160px;
+  border-radius: 20px; }
+
 nav[data-toggle='toc'] {
   margin-top: 30px; }
 
