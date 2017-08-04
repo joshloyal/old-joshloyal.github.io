@@ -1,10 +1,24 @@
 import threading
 import webbrowser
+import os
 
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 
-def run_server(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+class HTTPRequestHandler(SimpleHTTPRequestHandler):
+    """Hacky way to get blog posts to resolve
+    (dont have the html extenstion)"""
+    def do_GET(self):
+        posts = [f.split('.')[0] for f in os.listdir('blog') if
+                 f.endswith('.html') and
+                 f not in ['index.html' '404.html']]
+        path_end = self.path.split('/')[-1]
+        if path_end in posts:
+            self.path = self.path + '.html'
+
+        return super(HTTPRequestHandler, self).do_GET()
+
+def run_server(server_class=HTTPServer, handler_class=HTTPRequestHandler):
     server_address = ('', 8000)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
