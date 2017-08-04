@@ -5,12 +5,12 @@
     <atom:link href="http://joshloyal.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://joshloyal.github.io/blog/</link>
     <description></description>
-    <pubDate>Thu, 03 Aug 2017 22:22:25 -0400</pubDate>
+    <pubDate>Thu, 03 Aug 2017 22:32:37 -0400</pubDate>
     
       <item>
         <title>Hello world!</title>
-        <link>http://joshloyal.github.io/blog/2017/08/03/hello-world.html</link>
-        <guid isPermaLink="true">http://joshloyal.github.io/blog/2017/08/03/hello-world.html</guid>
+        <link>http://joshloyal.github.io/blog/hello-world</link>
+        <guid isPermaLink="true">http://joshloyal.github.io/blog/hello-world</guid>
         <description>&lt;p&gt;This is the launch of the blog on my personal site. I am still not sure what this
 blog will contain. In fact, I am starting this blog to develop my writing voice and style.
 However, I know that it will primarily be a place I can expand on ideas relevant to my
