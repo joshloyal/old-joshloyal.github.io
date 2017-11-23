@@ -5,7 +5,59 @@
     <atom:link href="http://joshloyal.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://joshloyal.github.io/blog/</link>
     <description></description>
-    <pubDate>Thu, 23 Nov 2017 12:15:58 -0500</pubDate>
+    <pubDate>Thu, 23 Nov 2017 12:24:10 -0500</pubDate>
+    
+      <item>
+        <title>Lasso Regression</title>
+        <link>http://joshloyal.github.io/blog/lasso-regression</link>
+        <guid isPermaLink="true">http://joshloyal.github.io/blog/lasso-regression</guid>
+        <description>&lt;p&gt;Like statistics and algorithms, optimization is one of those areas that I always feel like I could learn some more from.&lt;/p&gt;
+
+&lt;p&gt;I want to talk a little about the optimization of the lasso objective. It is a good introduction to techniques used in convex analysis, that are not taught in most undergrade optimization courses. Its good to be exposed to this, since many real world optimization problems are not solvable using the classic ‘take the derivative and solve for when it is zero’ trick&lt;/p&gt;
+
+&lt;p&gt;[
+    f(x^{&lt;em&gt;}) = f(x) + \nable f(x)^T (x^{&lt;/em&gt;} - x) + \frac{1}{2}(x^{&lt;em&gt;} - x)^T H(x) (x^&lt;/em&gt; - x)
+]&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Sep 2017 17:15:20 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Image Vis</title>
+        <link>http://joshloyal.github.io/blog/image-vis</link>
+        <guid isPermaLink="true">http://joshloyal.github.io/blog/image-vis</guid>
+        <description>&lt;p&gt;I rescently presented a &lt;a href=&quot;https://github.com/joshloyal/pydata-amazon-products/blob/master/Classifying%20Documents%20Based%20on%20Images%20and%20Text.pdf&quot;&gt;talk&lt;/a&gt; on building a classifier for image and text data. One thing I
+noticed was the lack of libraries for make plots for exploratory data analysis of image data. EDA
+is an extremely important aspect of data analysis, and that should be no different if you’re looking
+at images, text, or normal tabular data.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+Image BarPlot
+=============
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;image_vis&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ivs&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ivs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cifar10'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ivs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image_barplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/img/image_barplot.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 04 Aug 2017 18:50:29 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Oblique Random Forests</title>
+        <link>http://joshloyal.github.io/blog/oblique-random-forests</link>
+        <guid isPermaLink="true">http://joshloyal.github.io/blog/oblique-random-forests</guid>
+        <description>
+</description>
+        <pubDate>Fri, 04 Aug 2017 11:21:24 -0400</pubDate>
+      </item>
     
       <item>
         <title>Hello world!</title>
