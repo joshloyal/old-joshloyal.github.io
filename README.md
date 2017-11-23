@@ -12,13 +12,11 @@ git pull
 ```
 
 To generate the site
-1. Copy resume site to the main landing page
+1. To serve a site with blog drafts
 ```bash
-    cd _resume_template
-    SITE_DIR=../ make site
+    make serve-draft
 ```
-2. Copy and build blog
+2. To build and serve the site for publication
 ```bash
-    cd ../_blog
-    jekyll build --destination ../blog
+    make serve
 ```
