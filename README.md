@@ -1,5 +1,5 @@
 # website
-Content for my Personal Website
+Content for my Personal Website. The blog section was migrated from jekyll to hugo using blogdown. The repo can be found [here](https://github.com/joshloyal/hugo-blog).
 
 To update the repo
 1. Update submodules
@@ -11,12 +11,7 @@ git submodule update --recursive --remote
 git pull
 ```
 
-To generate the site
-1. To serve a site with blog drafts
-```bash
-    make serve-draft
-```
-2. To build and serve the site for publication
+To build and serve the site for publication
 ```bash
     make serve
 ```
