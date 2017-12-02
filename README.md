@@ -13,5 +13,5 @@ git pull
 
 To build and serve the site for publication
 ```bash
-    make serve
+make serve
 ```
